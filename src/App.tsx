@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
-import Tokens from './components/Tokens'
+import Blockchains from './components/Blockchains'
 import HotTokens from './components/HotTokens'
 import Prices from './components/Prices'
 import Sidebar from './components/Sidebar'
@@ -13,9 +13,9 @@ function App() {
     <Navbar/>
     <div className='flex'>
       <Sidebar></Sidebar>
-      <div className='w-full min-h-screen bg-[#dcd4ff]'>
+      <div className='w-full min-h-screen'>
         <Routes>
-          <Route path='/' element={<Tokens/>}></Route>
+          <Route path='/' element={<Blockchains/>}></Route>
           <Route path ='/price' element={<Prices/>}></Route>
           <Route path='/trend' element={<HotTokens/>}> </Route>
         </Routes>
