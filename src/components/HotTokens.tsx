@@ -8,9 +8,9 @@ const HotTokens = () => {
         marketCap: any
     }
 
-    const [page] = useState<Number>(1)
+    const [page, setPage] = useState<number>(1)
     const [coins, setCoins] = useState<Coins[]>([])
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
  
     const per_page = 20;
 
@@ -39,63 +39,65 @@ const HotTokens = () => {
     }, [page])
     return (
         <div>
-            {loading ? <div className="text-[#b63788] flex justify-center items-center min-h-200 text-6xl font-semibold"> loading. pls wait...</div> : 
-            <div className="flex text-black">
-                <div className="border-r flex h-screen py-2 border-blue-500 md:w-150 w-25 ml-1 text-[#b63788] flex-col">
+            {loading ? <div className="text-[#b63788] flex justify-center items-center min-h-screen text-6xl font-semibold"> loading. pls wait...</div> : 
+            <div className="flex text-black h-full">
+                <div className="border-r flex py-2 border-blue-500 md:w-150 w-25 ml-1 text-[#b63788] flex-col">
                     <h1 className="border-b border-blue-500 text-xl font-bold">Name</h1>
-                    <h2 className="flex flex-col text-black">
+                    <h2 className="flex flex-col text-black font-bold">
                         {coins.map((coin)=> {
                            return (
-                                <div className="border-b h-13 border-blue-200 hover:bg-stone-200">
+                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200">
                                     {coin.name}
                                 </div>
                             )
                         })}
+                         <button className="bg-blue-200 py-2 hover:border-2" onClick={() => {if(page<2){return  }setPage((prev)=> (prev-1))}}> prev</button>
                     </h2>
                 </div>
-                <div className="border-r h-screen  md:w-90 py-2 ml-1 border-blue-500 w-20  text-[#b63788] flex flex-col">
+                <div className="border-r  md:w-90 py-2 ml-1 border-blue-500 w-17  text-[#b63788] flex flex-col">
                     <h1 className="border-b border-blue-500 text-xl font-bold">symbol</h1>
                     <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
                             <div>
-                                <div className="border-b h-13 border-blue-200 hover:bg-stone-200">
+                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200">
                                     {coin.symbol}
                                 </div>
                                
                                 </div>
                             )
                         })}
-                        <button className="bg-blue-200"> prev</button>
+                       
                     </h2>
                 </div>
-                <div className="flex border-r  md:w-150 h-screen border-blue-500 w-30  py-2 ml-1 text-[#b63788] flex-col">
-                    <h1 className="border-b border-blue-500 text-xl font-bold">price</h1>
+                <div className="flex border-r  md:w-150 border-blue-500 w-27  py-2 ml-1 text-[#b63788] flex-col">
+                    <h1 className="border-b border-blue-500 text-xl font-bold">price(inr)</h1>
                       <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
                             <div>
-                                <div className="border-b h-13 border-blue-200 hover:bg-stone-200">
-                                    {coin.price}[inr]
+                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200">
+                                    {coin.price}
                                 </div>
                                 
                             </div>
                             )
                             
                         })}
-                        <button className="bg-pink-200 ">Next </button>
+                        
                     </h2>
                 </div>
-                 <div className="flex h-screen md:w-150 py-2 ml-1  text-[#b63788] w-45 flex-col">
-                    <h1 className="border-b border-blue-500 text-xl font-bold">marketcap</h1>
+                 <div className="flex md:w-150 py-2 ml-1  text-[#b63788] w-35 flex-col">
+                    <h1 className="border-b border-blue-500 md:text-xl text-lg font-bold">marketcap(inr)</h1>
                       <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
-                                <div className="border-b h-13 border-blue-200 hover:bg-stone-200">
-                                    {coin.marketCap}[inr]
+                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200">
+                                    {coin.marketCap}
                                 </div>
                             )
                         })}
+  <button className="bg-pink-200 py-2 hover:border-2" onClick={() => setPage((prev)=> (prev+1))}>Next </button>
                     </h2>
                 </div>
             </div>}
