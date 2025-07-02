@@ -8,7 +8,7 @@ const HotTokens = () => {
         marketCap: any
     }
 
-    const [page, setPage] = useState<Number>(1)
+    const [page] = useState<Number>(1)
     const [coins, setCoins] = useState<Coins[]>([])
     const [loading, setLoading] = useState<boolean>(false)
  
