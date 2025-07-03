@@ -12,7 +12,7 @@ const HotTokens = () => {
     const [coins, setCoins] = useState<Coins[]>([])
     const [loading, setLoading] = useState<boolean>(true)
  
-    const per_page = 20;
+    const per_page = 14;
 
     const fetchCoins = async () => {
         const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets?page=${page}&per_page=${per_page}&vs_currency=inr`, {
@@ -40,27 +40,27 @@ const HotTokens = () => {
     return (
         <div>
             {loading ? <div className="text-[#b63788] flex justify-center items-center min-h-screen text-6xl font-semibold"> loading. pls wait...</div> : 
-            <div className="flex text-black h-full">
-                <div className="border-r flex py-2 border-blue-500 md:w-150 w-25 ml-1 text-[#b63788] flex-col">
-                    <h1 className="border-b border-blue-500 text-xl font-bold">Name</h1>
+            <div className="flex text-black min-h-150">
+                <div className="border-r flex py-2 border-blue-500 md:w-150 w-27 ml-1 text-[#b63788] flex-col">
+                    <h1 className="border-b border-blue-500 py-2 text-xl font-bold">Name</h1>
                     <h2 className="flex flex-col text-black font-bold">
                         {coins.map((coin)=> {
                            return (
-                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200">
+                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200" key={coin.symbol}>
                                     {coin.name}
                                 </div>
                             )
                         })}
-                         <button className="bg-blue-200 py-2 hover:border-2" onClick={() => {if(page<2){return  }setPage((prev)=> (prev-1))}}> prev</button>
+                         <button className="bg-blue-200 py-3 hover:border-2" onClick={() => {if(page<1){return  }setPage((prev)=> (prev-1))}}> prev</button>
                     </h2>
                 </div>
                 <div className="border-r  md:w-90 py-2 ml-1 border-blue-500 w-17  text-[#b63788] flex flex-col">
-                    <h1 className="border-b border-blue-500 text-xl font-bold">symbol</h1>
+                    <h1 className="border-b border-blue-500 text-xl py-2 font-bold">symbol</h1>
                     <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
                             <div>
-                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200">
+                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200" key={coin.symbol}>
                                     {coin.symbol}
                                 </div>
                                
@@ -71,7 +71,7 @@ const HotTokens = () => {
                     </h2>
                 </div>
                 <div className="flex border-r  md:w-150 border-blue-500 w-27  py-2 ml-1 text-[#b63788] flex-col">
-                    <h1 className="border-b border-blue-500 text-xl font-bold">price(inr)</h1>
+                    <h1 className="border-b border-blue-500 text-xl py-2 font-bold">price(inr)</h1>
                       <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
@@ -87,8 +87,8 @@ const HotTokens = () => {
                         
                     </h2>
                 </div>
-                 <div className="flex md:w-150 py-2 ml-1  text-[#b63788] w-35 flex-col">
-                    <h1 className="border-b border-blue-500 md:text-xl text-lg font-bold">marketcap(inr)</h1>
+                 <div className="flex md:w-150 py-2 ml-1  text-[#b63788] w-40 flex-col">
+                    <h1 className="border-b border-blue-500 md:text-xl py-2 text-lg font-bold">marketcap(inr)</h1>
                       <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
@@ -97,7 +97,7 @@ const HotTokens = () => {
                                 </div>
                             )
                         })}
-  <button className="bg-pink-200 py-2 hover:border-2" onClick={() => setPage((prev)=> (prev+1))}>Next </button>
+  <button className="bg-pink-200 py-3 hover:border-2" onClick={() => setPage((prev)=> (prev+1))}>Next </button>
                     </h2>
                 </div>
             </div>}
