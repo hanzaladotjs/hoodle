@@ -59,8 +59,8 @@ const Global = () => {
                     <div className="w-full flex-wrap flex md:ml-5 ">{Object.entries(globe.marketcap).map((one: any, index) => {
                         return (
                             <div key={index} className="flex border border-yellow-500 px-1 py-5 md:px-5 md:py-10 hover:bg-pink-200 space-x-2" >
-                                <div className="text-black font-bold md:text-lg"> {one[0]}: </div>
-                                <div className="text-green-700 font-semibold md:text-lg"> {one[1]} </div>
+                                <div className="text-black font-bold md:text-lg text-sm"> {one[0]}: </div>
+                                <div className="text-green-700 font-semibold md:text-lg text-sm"> {one[1]} </div>
                             </div>
                         )
                     })}
@@ -69,8 +69,8 @@ const Global = () => {
                        <div className="w-full flex-wrap flex md:ml-5 ">{Object.entries(globe.volume).map((one: any, index) => {
                         return (
                             <div key={index} className="flex border  border-stone-500 px-1 py-5 md:px-5 md:py-10  hover:bg-pink-200 space-x-2" >
-                                <div className="text-black font-bold md:text-lg"> {one[0]}: </div>
-                                <div className="text-green-700 font-semibold md:text-lg"> {one[1]} </div>
+                                <div className="text-black font-bold md:text-lg text-sm"> {one[0]}: </div>
+                                <div className="text-green-700 font-semibold md:text-lg text-sm"> {one[1]} </div>
                             </div>
                         )
                     })}
