@@ -1,8 +1,8 @@
-const NeubrutalismButton = () => {
+const NeubrutalismButton = ({props}:any) => {
   return (
     <button
-      onClick={() => console.log('SyntaxUI is the best!')}
-      className={'group/button rounded-lg bg-[#222222] md:mt-0 mt-2 text-black'}
+      onClick={props}
+      className={'group/button rounded-lg bg-[#222222] md:mt-0 mt-2 text-black  '}
     >
       <span
         className={

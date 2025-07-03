@@ -11,7 +11,7 @@ const Sidebar = () => {
                <Link to ="/ex" ><h2 className="py-6  hover:text-3xl text-center">Explore Exchnages</h2></Link>
                 
                <Link to={"/global"}><h2 className="py-6 hover:text-3xl text-center  ">Global Crypto Market</h2> </Link>
-                <h2 className="py-6 hover:text-3xl text-center  ">Explore Blockchains</h2>
+               <Link to={"/chains"} ><h2 className="py-6 hover:text-3xl text-center  ">Explore Blockchains</h2></Link>
             </div>
             
         </div>

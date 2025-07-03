@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar'
 import HotTokens from './components/HotTokens'
 import Exchanges from './components/Exchanges'
 import Global from './components/GobalCrypto'
+import Blockchains from './components/Blockchains'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
           <Route path='/trend' element={<HotTokens/>}></Route>
           <Route path='/ex' element={<Exchanges/>}></Route>
           <Route path='/global' element={<Global/>}></Route>
-          
+           <Route path='/chains' element={<Blockchains/>}></Route>
         </Routes>
       </div>
     </div>
