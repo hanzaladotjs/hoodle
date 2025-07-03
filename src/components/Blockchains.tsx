@@ -26,7 +26,7 @@ const Blockchains = () => {
         <div>
               {loading ? <div className="text-[#b63788] flex justify-center items-center min-h-screen text-6xl font-semibold"> loading. pls wait...</div>: 
               <div className="flex flex-col">
-                <div className="md:text-7xl text-xl text-black  my-10">
+                <div className="md:text-7xl text-2xl text-black font-bold  my-10">
                     List of popular blockchains/ecosystems
                 </div> 
                 <div className="space-y-3">
