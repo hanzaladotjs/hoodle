@@ -17,7 +17,7 @@ function App() {
     <Navbar/>
     <div className='flex'>
       <Sidebar/>
-      <div className='md:w-full md:min-h-screen  bg-white border-t text-[#ffafe2]'
+      <div className=' md:absolute md:top-25 md:left-120  border-t text-[#ffafe2]'
       >
         <Routes>
           <Route path='/' element={<Home/>}></Route>

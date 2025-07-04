@@ -40,13 +40,13 @@ const HotTokens = () => {
     return (
         <div>
             {loading ? <div className="text-[#b63788] flex justify-center items-center min-h-screen text-6xl font-semibold"> loading. pls wait...</div> : 
-            <div className="flex text-black min-h-150">
-                <div className="border-r flex py-2 border-blue-500 md:w-150 w-27 ml-1 text-[#b63788] flex-col">
-                    <h1 className="border-b border-blue-500 py-2 text-xl font-bold">Name</h1>
+            <div className="flex text-black  ml-1 justify-center" >
+                <div className="border-x flex py-2 border-blue-500 md:w-80 w-27 text-[#b63788] flex-col">
+                    <h1 className="border-b border-blue-500 py-2 md:text-xl text-md font-bold">Name</h1>
                     <h2 className="flex flex-col text-black font-bold">
                         {coins.map((coin)=> {
                            return (
-                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200" key={coin.symbol}>
+                                <div className="border-b h-16 border-blue-200 hover:bg-stone-200" key={coin.symbol}>
                                     {coin.name}
                                 </div>
                             )
@@ -55,12 +55,12 @@ const HotTokens = () => {
                     </h2>
                 </div>
                 <div className="border-r  md:w-90 py-2 ml-1 border-blue-500 w-17  text-[#b63788] flex flex-col">
-                    <h1 className="border-b border-blue-500 text-xl py-2 font-bold">symbol</h1>
+                    <h1 className="border-b border-blue-500 md:text-xl py-2  text-md font-bold">symbol</h1>
                     <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
                             <div>
-                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200" key={coin.symbol}>
+                                <div className="border-b h-16 border-blue-200 hover:bg-stone-200" key={coin.symbol}>
                                     {coin.symbol}
                                 </div>
                                
@@ -71,12 +71,12 @@ const HotTokens = () => {
                     </h2>
                 </div>
                 <div className="flex border-r  md:w-150 border-blue-500 w-27  py-2 ml-1 text-[#b63788] flex-col">
-                    <h1 className="border-b border-blue-500 text-xl py-2 font-bold">price(inr)</h1>
+                    <h1 className="border-b border-blue-500 md:text-xl text-md py-2 font-bold">price(inr)</h1>
                       <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
                             <div>
-                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200">
+                                <div className="border-b h-16 border-blue-200 hover:bg-stone-200">
                                     {coin.price}
                                 </div>
                                 
@@ -87,12 +87,12 @@ const HotTokens = () => {
                         
                     </h2>
                 </div>
-                 <div className="flex md:w-150 py-2 ml-1  text-[#b63788] w-40 flex-col">
-                    <h1 className="border-b border-blue-500 md:text-xl py-2 text-lg font-bold">marketcap(inr)</h1>
+                 <div className="flex md:w-100 py-2 ml-1  text-[#b63788] w-40 flex-col">
+                    <h1 className="border-b border-blue-500 md:text-xl py-2 md:text-lg text-sm font-bold">marketcap(inr)</h1>
                       <h2 className="flex flex-col text-black">
                            {coins.map((coin)=> {
                            return (
-                                <div className="border-b h-18 border-blue-200 hover:bg-stone-200">
+                                <div className="border-b h-16 border-blue-200 hover:bg-stone-200">
                                     {coin.marketCap}
                                 </div>
                             )

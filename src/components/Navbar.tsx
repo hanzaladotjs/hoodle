@@ -32,10 +32,10 @@ const Navbar = () => {
                 
             </div> </nav>
             {open? <div className="  absolute top-20 bg-white left-1 flex md:hidden  border-2 py-2 justify-center items-center">
-                    <Link to={"/trend"} ><div className="border-r bg-green-200  w-14"> Coins  </div></Link>
-                   <Link to={"/ex"}> <div className="p-1 border-r bg-blue-200 px-2 w-30 "> Exchanges </div> </Link>
-                   <Link to={"/chains"} ><div className="p-1  border-r bg-yellow-200 w-30 "> Blockchains </div></Link>
-                   <Link  to={"/global"}><div className="p-1  w-30 px-1 bg-pink-200"> Global data</div> </Link>
+                    <Link to={"/trend"} onClick={() => setOpen(false)} ><div className="border-r bg-green-200  w-14"> Coins  </div></Link>
+                   <Link to={"/ex"} onClick={() => setOpen(false)} > <div className="p-1 border-r bg-blue-200 px-2 w-30 "> Exchanges </div> </Link>
+                   <Link to={"/chains"} onClick={() => setOpen(false)}  ><div className="p-1  border-r bg-yellow-200 w-30 "> Blockchains </div></Link>
+                   <Link  to={"/global"} onClick={() => setOpen(false)} ><div className="p-1  w-30 px-1 bg-pink-200"> Global data</div> </Link>
                 </div> : null}
             </div>
 

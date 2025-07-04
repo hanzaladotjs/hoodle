@@ -58,7 +58,7 @@ const Global = () => {
                     <h1 className="text-orange-700 my-5 md:text-4xl my-4 text-center text-xl hover:underline">MarketCap:</h1>
                     <div className="w-full flex-wrap flex md:ml-5 ">{Object.entries(globe.marketcap).map((one: any, index) => {
                         return (
-                            <div key={index} className="flex border border-yellow-500 px-1 py-5 md:px-5 md:py-10 hover:bg-pink-200 space-x-2" >
+                            <div key={index} className="flex border border-yellow-500 px-1 py-5 md:px-5 md:py-10 hover:bg-pink-200 space-x-1" >
                                 <div className="text-black font-bold md:text-lg text-sm"> {one[0]}: </div>
                                 <div className="text-green-700 font-semibold md:text-lg text-sm"> {one[1]} </div>
                             </div>
@@ -68,7 +68,7 @@ const Global = () => {
                    < h1 className="text-orange-700 my-5 md:text-4xl my-4 text-center text-xl hover:underline">Volume:</h1>
                        <div className="w-full flex-wrap flex md:ml-5 ">{Object.entries(globe.volume).map((one: any, index) => {
                         return (
-                            <div key={index} className="flex border  border-stone-500 px-1 py-5 md:px-5 md:py-10  hover:bg-pink-200 space-x-2" >
+                            <div key={index} className="flex border  border-stone-500 px-1 py-5 md:px-5 md:py-10  hover:bg-pink-200 space-x-1" >
                                 <div className="text-black font-bold md:text-lg text-sm"> {one[0]}: </div>
                                 <div className="text-green-700 font-semibold md:text-lg text-sm"> {one[1]} </div>
                             </div>
